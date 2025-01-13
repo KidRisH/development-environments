@@ -1,12 +1,17 @@
 version: "1.0"
 services:
   rabbitmq:
-    image: rabbitmq:3-management
+    image: rabbitmq:latest
     container_name: RabbitMQ
     ports:
       - 5672:5672
       - 15672:15672
     volumes:
       - rabbitmq_data:/var/lib/rabbitmq
+  kafka:
+    image: apache/kafka:latest
+    container_name: Kafka
+    ports:
+      - 9092:9092
 volumes:
   rabbitmq-data:
