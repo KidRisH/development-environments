@@ -2,6 +2,7 @@ version: "1.0"
 services:  
   memcached:
     image: memcached
+    container_name: Memcached
+    restart: always
     ports:
       - 11211:11211
-    restart: always

@@ -3,11 +3,13 @@ services:
   valkey:
     image: valkey/valkey
     container_name: Valkey
+    restart: always
     ports:
       - 6379:6379
   
   memcached:
     image: memcached
+    container_name: Memcached
+    restart: always
     ports:
       - 11211:11211
-    restart: always

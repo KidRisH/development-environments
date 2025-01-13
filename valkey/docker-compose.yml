@@ -3,5 +3,6 @@ services:
   valkey:
     image: valkey/valkey
     container_name: Valkey
+    restart: always
     ports:
       - 6379:6379
