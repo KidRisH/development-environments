@@ -1,0 +1,7 @@
+version: "1.0"
+services:
+  Kafka:
+    image: apache/kafka:latest
+    container_name: Kafka
+    ports:
+      - 9092:9092
