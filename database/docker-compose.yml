@@ -1,0 +1,40 @@
+version: "1.0"
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: MSSqlServer
+    restart: always
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "12qw!!QW"
+    ports:
+      - 1433:1433
+    volumes:
+      - mssql-data:/var/opt/mssql
+  postgres:
+    image: postgres
+    container_name: PostgreSql
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12qw!QW
+    volumes:
+      - postgresql-data:/var/lib/postgresql/data
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: PgAdmin4
+    restart: always
+    ports:
+      - "8888:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@kidrish.com
+      PGADMIN_DEFAULT_PASSWORD: 12qw!QW
+    volumes:
+      - pgadmin4-data:/var/lib/pgadmin
+
+volumes:
+  mssql-data:
+  postgresql-data:
+  pgadmin4-data:
