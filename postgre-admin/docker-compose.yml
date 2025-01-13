@@ -1,11 +1,11 @@
 version: "1.0"
 services:
-  db:
+  postgres:
     image: postgres
     container_name: PostgreSql
     restart: always
     ports:
-      - "5432:5432"
+      - 5432:5432
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 12qw!QW
@@ -16,7 +16,7 @@ services:
     container_name: PgAdmin4
     restart: always
     ports:
-      - "8888:80"
+      - 8888:80
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@kidrish.com
       PGADMIN_DEFAULT_PASSWORD: 12qw!QW
