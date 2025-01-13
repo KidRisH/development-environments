@@ -5,3 +5,9 @@ services:
     container_name: Valkey
     ports:
       - 6379:6379
+  
+  memcached:
+    image: memcached
+    ports:
+      - 11211:11211
+    restart: always
