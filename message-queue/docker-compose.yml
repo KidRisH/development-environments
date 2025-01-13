@@ -3,6 +3,7 @@ services:
   rabbitmq:
     image: rabbitmq:latest
     container_name: RabbitMQ
+    restart: always
     ports:
       - 5672:5672
       - 15672:15672
@@ -11,6 +12,7 @@ services:
   kafka:
     image: apache/kafka:latest
     container_name: Kafka
+    restart: always
     ports:
       - 9092:9092
 volumes:

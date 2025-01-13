@@ -3,5 +3,6 @@ services:
   Kafka:
     image: apache/kafka:latest
     container_name: Kafka
+    restart: always
     ports:
       - 9092:9092
