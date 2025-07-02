@@ -6,7 +6,7 @@ services:
     restart: always
     environment:
       ACCEPT_EULA: "Y"
-      MSSQL_SA_PASSWORD: "12qw!!QW"
+      MSSQL_SA_PASSWORD: "Qwe123!!"
     ports:
       - 1433:1433
     volumes:
@@ -20,7 +20,7 @@ services:
       - "5432:5432"
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 12qw!QW
+      POSTGRES_PASSWORD: Qwe123!!
     volumes:
       - postgresql-data:/var/lib/postgresql/data
   pgadmin:
@@ -31,7 +31,7 @@ services:
       - "8888:80"
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@kidrish.com
-      PGADMIN_DEFAULT_PASSWORD: 12qw!QW
+      PGADMIN_DEFAULT_PASSWORD: Qwe123!!
     volumes:
       - pgadmin4-data:/var/lib/pgadmin
 
