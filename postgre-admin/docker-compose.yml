@@ -8,7 +8,7 @@ services:
       - 5432:5432
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 12qw!QW
+      POSTGRES_PASSWORD: 123qweQWE!
     volumes:
       - postgresql-data:/var/lib/postgresql/data
   pgadmin:
@@ -19,7 +19,7 @@ services:
       - 8888:80
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@kidrish.com
-      PGADMIN_DEFAULT_PASSWORD: 12qw!QW
+      PGADMIN_DEFAULT_PASSWORD: 123qweQWE!
     volumes:
       - pgadmin4-data:/var/lib/pgadmin
 
