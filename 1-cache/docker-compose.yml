@@ -2,21 +2,21 @@ version: "1.0"
 services:
   valkey:
     image: valkey/valkey
-    container_name: Valkey
+    container_name: C-Valkey
     restart: always
     ports:
-      - 6379:6379
+      - 6380:6379
   
   memcached:
     image: memcached
-    container_name: Memcached
+    container_name: C-Memcached
     restart: always
     ports:
       - 11211:11211
   
   redis:
     image: redis
-    container_name: Redis
+    container_name: C-Redis
     restart: always
     ports:
       - 6379:6379

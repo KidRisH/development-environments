@@ -2,7 +2,7 @@ version: "1.0"
 services:
   rabbitmq:
     image: rabbitmq:latest
-    container_name: RabbitMQ
+    container_name: MQ-RabbitMQ
     restart: always
     ports:
       - 5672:5672
@@ -11,7 +11,7 @@ services:
       - rabbitmq_data:/var/lib/rabbitmq
   kafka:
     image: apache/kafka:latest
-    container_name: Kafka
+    container_name: MQ-Kafka
     restart: always
     ports:
       - 9092:9092

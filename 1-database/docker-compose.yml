@@ -2,7 +2,7 @@ version: "1.0"
 services:
   mssql:
     image: mcr.microsoft.com/mssql/server:2022-latest
-    container_name: MSSqlServer
+    container_name: DB-MSSqlServer
     restart: always
     environment:
       ACCEPT_EULA: "Y"
@@ -14,7 +14,7 @@ services:
   
   postgres:
     image: postgres
-    container_name: PostgreSql
+    container_name: DB-PostgreSql
     restart: always
     ports:
       - "5432:5432"
@@ -25,7 +25,7 @@ services:
       - postgresql-data:/var/lib/postgresql/data
   pgadmin:
     image: dpage/pgadmin4
-    container_name: PgAdmin4
+    container_name: DB-PgAdmin4
     restart: always
     ports:
       - "8888:80"
