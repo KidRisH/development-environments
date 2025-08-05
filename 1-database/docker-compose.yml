@@ -10,7 +10,7 @@ services:
     ports:
       - 1433:1433
     volumes:
-      - mssql-data:/var/opt/mssql
+      - db-mssql-data:/var/opt/mssql
   
   postgres:
     image: postgres
@@ -22,7 +22,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 123qweQWE!
     volumes:
-      - postgresql-data:/var/lib/postgresql/data
+      - db-postgresql-data:/var/lib/postgresql/data
   pgadmin:
     image: dpage/pgadmin4
     container_name: DB-PgAdmin4
@@ -33,9 +33,9 @@ services:
       PGADMIN_DEFAULT_EMAIL: admin@kidrish.com
       PGADMIN_DEFAULT_PASSWORD: 123qweQWE!
     volumes:
-      - pgadmin4-data:/var/lib/pgadmin
+      - db-pgadmin4-data:/var/lib/pgadmin
 
 volumes:
-  mssql-data:
-  postgresql-data:
-  pgadmin4-data:
+  db-mssql-data:
+  db-postgresql-data:
+  db-pgadmin4-data:
