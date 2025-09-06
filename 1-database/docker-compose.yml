@@ -34,8 +34,21 @@ services:
       PGADMIN_DEFAULT_PASSWORD: 123qweQWE!
     volumes:
       - db-pgadmin4-data:/var/lib/pgadmin
+  
+  mongodb:
+    image: mongo:latest
+    container_name: DB-MongoDB
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 123qweQWE!
+    volumes:
+      - db-mongo-data:/data/db
 
 volumes:
+  db-mongo-data:
   db-mssql-data:
   db-postgresql-data:
   db-pgadmin4-data:
