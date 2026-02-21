@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  elasticsearch:
+    image: elasticsearch:latest
+    container_name: ElasticSearch
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - discovery.type=single-node
+    volumes:
+      - elastic-search-data:/usr/share/elasticsearch/data
+
+volumes:
+  elastic-search-data:

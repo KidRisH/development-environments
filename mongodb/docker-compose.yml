@@ -11,7 +11,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: 123qweQWE!
     volumes:
-      - db-mongo-data:/data/db
+      - mongodb-data:/data/db
       
 volumes:
-  db-mongo-data:
+  mongodb-data:

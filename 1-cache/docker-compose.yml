@@ -22,5 +22,16 @@ services:
       - 6379:6379
     volumes: 
       - c-redis-data:/data
+  elasticsearch:
+    image: elasticsearch:latest
+    container_name: ElasticSearch
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - discovery.type=single-node
+    volumes:
+      - c-elastic-search-data:/usr/share/elasticsearch/data
 volumes:
   c-redis-data:
+  c-elastic-search-data:
