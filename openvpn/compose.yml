@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  openvpn:
+    image: kylemanna/openvpn:latest
+    container_name: OpenVPN-Server
+    restart: always
+    ports:
+      - "11194:1194/udp"
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    sysctls:
+      - net.ipv4.ip_forward=1
+      - net.ipv6.conf.all.forwarding=1
+      - net.ipv6.conf.default.forwarding=1
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - ./openvpn-data:/etc/openvpn
+      - ./logs:/var/log/openvpn
+    environment:
+      # Cloudflare DNS
+      - DNS1=1.1.1.1
+      - DNS2=1.0.0.1
+    networks:
+      - openvpn-network
+
+networks:
+  openvpn-network:
+    driver: bridge

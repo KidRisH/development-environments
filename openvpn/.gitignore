@@ -1,0 +1,30 @@
+# =============================================================================
+# OpenVPN - Hassas veriler ve runtime dosyaları
+# =============================================================================
+
+# PKI ve sertifikalar (özel anahtarlar, CA, istemci sertifikaları)
+openvpn-data/
+!openvpn-data/.gitkeep
+
+# İstemci .ovpn dosyaları (özel anahtar içerir)
+clients/
+!clients/.gitkeep
+
+Pharmacy-clients/
+!Pharmacy-clients/.gitkeep
+
+# Log dosyaları
+logs/
+!logs/.gitkeep
+
+# Setup state (sunucu IP ve kurulum durumu)
+.openvpn-state.json
+
+# UDP forwarder (Windows'a özgü, runtime)
+windows/udp-forward.ps1
+
+# Genel
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
